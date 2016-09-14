@@ -242,7 +242,49 @@
 		
 	}
 	.lunbo{
+		position:relative;
 		/*background-image: url("img/轮播.jpg");*/
+	}
+	.lunbo_dian{
+		position:absolute;
+		width:69px; 
+        height:10px; 
+        right: 50%;
+        bottom:30px;
+        transform: translate(50%,50%);
+
+	}
+	span{
+		float: left;
+        border-radius:10px;
+        width:10px; 
+        height:10px; 
+        background-color: white;
+        display: block;
+        margin:0 6.5px;
+        bottom: 10px;
+        right: 13px; 
+        /*position:absolute;*/
+        cursor:pointer;
+        z-index: 1;
+	}
+	span:hover{
+        background-color: black;
+    }
+    span:checked{
+        background-color: white;
+    }
+    span:last-of-type{
+        right: 0px;
+    }
+	#d{
+		z-index: 0;
+	}
+	.bianse{
+		background-color: black;
+	}
+	.wuse{
+		background-color: white;
 	}
 	</style>
 </head>
@@ -265,9 +307,17 @@
 		<li class="top2_li"><a href="http://open.163.com/" target="view_window"><div class="top2_sousuo"></div></a></li></ul>
 		</div>
 	</div></div>
-	<div id="d" class="lunbo"><a class="lunbo_a" href="http://open.163.com/" target="view_window"><img class="lunbo_jpg" src="img/轮播1.jpg" alt=""></a></div>
+	<div  id="d" class="lunbo"><a class="lunbo_a" href="http://open.163.com/" target="view_window" onmouseover="mOver(this)" onmouseout="mOut(this)">
+		<img class="lunbo_jpg" src="img/轮播1.jpg" alt=""></a>
+		<div class="lunbo_dian">
+			<span class="bianse" id="sp1"></span>
+			<span id="sp2"></span>
+			<span id="sp3"></span>
+		</div>
+	</div>
 	<script>
 		function fadeout(element){
+
         var t = element.getElementsByClassName('lunbo')[0]//获取元素对象
         t.style.opacity=0;//设置初始透明度为0
         function step(){
@@ -277,47 +327,105 @@
              clearInterval(intervalId);
              };}
         var intervalId = setInterval(step,5)//定时，每0.05秒执行一次step函数使得透明度增加0.1,0.5秒钟后透明度正好为1.
-        
+       
     } ;
-    	
+    	var t = document.getElementsByClassName('lunbo')[0];//获取元素对象
+    	var thttp = t.getElementsByClassName('lunbo_a')[0];//获取图片链接
+    	var tjpg = thttp.getElementsByClassName('lunbo_jpg')[0];//获取图片位置
+    	var diannum = document.getElementsByTagName('span');//获取小圆点
     fadeout(document);
-    		var num=1;
+    		var num=0;
+    		
     		function huan(){
-    			var t = document.getElementsByClassName('lunbo')[0];//获取元素对象
-    			var thttp = t.getElementsByClassName('lunbo_a')[0];
+    			
+    			
     			var tjpg = thttp.getElementsByClassName('lunbo_jpg')[0];
     			var hhh;
-
+    			var dian = t.getElementsByClassName('lunbo_a')[0];
+    			
+    			// document.getElementsByTagName('span')[0].style.backgroundColor
     			num++;//改变轮播图片名称序号
     			if(num == 4){
     				num=1;
     			};
     			if(num==1){
     				hhh='http://open.163.com/';
+    				diannum[0].className='bianse';
+    				// diannum[1].className-='bianse';
+    				diannum[2].className='wuse';
     			};
     			if(num==2){
     				hhh='http://study.163.com/';
+    				diannum[0].className='wuse';
+    				diannum[1].className='bianse';
+    				// diannum[2].className-='bianse';
     			};
     			if(num==3){
     				hhh='http://www.icourse163.org/';
+    				// diannum[0].className-='bianse';
+    				diannum[1].className='wuse';
+    				diannum[2].className='bianse';
     			};
-    			/*function(hhh){
-    			switch(num){
-    				case'\1':
-    				return 'http://open.163.com/';
-    				case'\2':
-    				return 'http://study.163.com/';
-    				case'\3':
-    				return 'http://www.icourse163.org/';
-    				break;
-    			}
-    		};*/
     		thttp.setAttribute('href',hhh);//改写网址
     		tjpg.setAttribute('src','img/轮播' + num +'.jpg');//改写轮播图片
+    		diannum.className += 'bianse';
     		 fadeout(document);
+
+    	var spand = document.getElementsByTagName('span');
+    	spand[0].addEventListener('mouseover',function(){ 
+    		clearInterval(lunbo);
+    		tjpg.setAttribute('src','img/轮播1.jpg');
+    		spand[0].setAttribute('class','bianse');
+    		spand[1].setAttribute('class','wuse');
+    		spand[2].setAttribute('class','wuse');
+    		num=1;},false);
+    	spand[1].addEventListener('mouseover',function(){ 
+    		clearInterval(lunbo);
+    		tjpg.setAttribute('src','img/轮播2.jpg');
+    		spand[0].setAttribute('class','wuse');
+    		spand[1].setAttribute('class','bianse');
+    		spand[2].setAttribute('class','wuse');
+    		num=2;},false);
+    	spand[2].addEventListener('mouseover',function(){ 
+    		clearInterval(lunbo);
+    		tjpg.setAttribute('src','img/轮播3.jpg');
+    		spand[1].setAttribute('class','wuse');
+    		spand[0].setAttribute('class','wuse');
+    		spand[2].setAttribute('class','bianse');
+    		num=3;},false);
+    		/* diannum.addEventListener('mousedown',num=num,false);*/
     	};
+    	huan();
     	var lunbo = setInterval(huan,5000);
+    	// var t = document.getElementsByClassName('lunbo')[0];
+    	// d.addEventListener('mouseover',clearInterval(lunbo),false);
+    	// d.addEventListener('mouseout',function(){var lunbo = setInterval(huan,5000)},false);
+    	function mOver(obj){ //鼠标指向是删除切换轮播定时器
+    		 clearInterval(lunbo);
+    	}
+    	function mOut(obj){ //鼠标移出时再设置定时器
+    		lunbo = setInterval(huan,5000);
+    	}
+    	// 	var lunbo = setInterval(huan,5000);
+    	// 	return lunbo;
+    	// }
+
+    	// spand[1].addEventListener('click',function(){ 
+    	// 	clearInterval(lunbo);
+    	// 	tjpg.setAttribute('src','img/轮播2.jpg');
+    	// 	spand[0].className='wuse'；
+    	// 	spand[2].className='wuse'；},false);
+    	// spand[2].addEventListener('click',function(){ 
+    	// 	clearInterval(lunbo);
+    	// 	tjpg.setAttribute('src','img/轮播3.jpg');
+    	// 	spand[0].className='wuse'；
+    	// 	spand[1].className='wuse'；},false);
+
+
+
+
 	</script>
+
 	<div class="middle">
 	<div class="sanlie">
 	<ul class="sanlie_flex">
