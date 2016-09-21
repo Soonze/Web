@@ -27,7 +27,7 @@
 		</div>
 	</div></div>
 	<div  id="d" class="lunbo"><a class="lunbo_a" href="http://open.163.com/" target="view_window" onmouseover="mOver(this)" onmouseout="mOut(this)">
-		<img class="lunbo_jpg" src="css/img/轮播1.jpg" alt=""></a>
+		<img class="lunbo_jpg" src="http://odqrz0v3j.bkt.clouddn.com/轮播1.jpg" alt=""></a>
 		<div class="lunbo_dian">
 			<span class="bianse" id="sp1"></span>
 			<span id="sp2"></span>
@@ -216,14 +216,14 @@ function getElementsByClassName(element, names) {   //获取class元素
                     diannum[2].className='bianse';
                 };
             thttp.setAttribute('href',hhh);//改写网址
-            tjpg.setAttribute('src','css/img/轮播' + num +'.jpg');//改写轮播图片
+            tjpg.setAttribute('src','http://odqrz0v3j.bkt.clouddn.com/轮播' + num +'.jpg') //轮播图片
             diannum.className += 'bianse';
              fadeout(document);
 
         var spand = document.getElementsByTagName('span');
         spand[0].addEventListener('mouseover',function(){ 
             clearInterval(lunbo);
-            tjpg.setAttribute('src','css/img/轮播1.jpg');
+            tjpg.setAttribute('src','http://odqrz0v3j.bkt.clouddn.com/轮播1.jpg');
             spand[0].setAttribute('class','bianse');
             spand[1].setAttribute('class','wuse');
             spand[2].setAttribute('class','wuse');
@@ -231,7 +231,7 @@ function getElementsByClassName(element, names) {   //获取class元素
             num=1;},false);
         spand[1].addEventListener('mouseover',function(){ 
             clearInterval(lunbo);
-            tjpg.setAttribute('src','css/img/轮播2.jpg');
+            tjpg.setAttribute('src','http://odqrz0v3j.bkt.clouddn.com/轮播2.jpg');
             spand[0].setAttribute('class','wuse');
             spand[1].setAttribute('class','bianse');
             spand[2].setAttribute('class','wuse');
@@ -239,7 +239,7 @@ function getElementsByClassName(element, names) {   //获取class元素
             num=2;},false);
         spand[2].addEventListener('mouseover',function(){ 
             clearInterval(lunbo);
-            tjpg.setAttribute('src','css/img/轮播3.jpg');
+            tjpg.setAttribute('src','http://odqrz0v3j.bkt.clouddn.com/轮播3.jpg');
             spand[1].setAttribute('class','wuse');
             spand[0].setAttribute('class','wuse');
             spand[2].setAttribute('class','bianse');

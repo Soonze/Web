@@ -55,7 +55,7 @@ body{
 
 	}
 	.top2_EDU{
-		background-image: url("img/img.png");
+		background-image: url("http://odqrz0v3j.bkt.clouddn.com/img.png");
 		background-repeat: no-repeat;
 		background-position: 0 0px;
 		height: 22px;
@@ -102,7 +102,7 @@ body{
 	color: #39a030;
 	}
 	.top2_sousuo{
-	background-image: url("img/img.png");
+	background-image: url("http://odqrz0v3j.bkt.clouddn.com/img.png");
 	background-repeat: no-repeat;
 	background-position: 0 -123px;
 	height: 18px;
@@ -147,7 +147,7 @@ body{
 	flex-graw:1;
 	}
 	.sanlie_bgimg{
-		background-image: url("img/img.png");
+		background-image: url("http://odqrz0v3j.bkt.clouddn.com/img.png");
 		background-repeat: no-repeat;
 		height: 80px;
 		width: 80px;	
@@ -192,7 +192,7 @@ body{
 		/*width: 322px;
 		height: 224px;*/
 		background-color: #f8f8f8;
-		background-image: url("img/five.png");
+		background-image: url("http://odqrz0v3j.bkt.clouddn.com/five.png");
 		background-repeat: no-repeat;
 		width: 320px;	
 		height: 220px;
@@ -316,7 +316,7 @@ body{
 	}
 	.onepeople{
 		margin-top: 10px;
-		background-image: url(img/img.png); 
+		background-image: url(http://odqrz0v3j.bkt.clouddn.com/img.png); 
 		display:inline-block;
 		/* width: auto; */
 		border:1px solid #ddd;
