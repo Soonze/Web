@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+    <meta http-equiv=“X-UA-Compatible” content=“IE=8″>
 	<title>网易大作业</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/Widescreen.css">
-
+<!--      <script src="css/IE8.js" type="text/javascript"></script> -->
 </head>
 <body>
 	<div class="body2">
@@ -27,154 +28,14 @@
 		</div>
 	</div></div>
 	<div  id="d" class="lunbo"><a class="lunbo_a" href="http://open.163.com/" target="view_window" onmouseover="mOver(this)" onmouseout="mOut(this)">
-		<img class="lunbo_jpg" src="img/轮播1.jpg" alt=""></a>
+		<img class="lunbo_jpg" src="http://odqrz0v3j.bkt.clouddn.com/轮播1.jpg" alt=""></a>
 		<div class="lunbo_dian">
 			<span class="bianse" id="sp1"></span>
 			<span id="sp2"></span>
 			<span id="sp3"></span>
 		</div>
 	</div>
-	<script>
-		function fadeout(element){
 
-        var t = element.getElementsByClassName('lunbo')[0]//获取元素对象
-        t.style.opacity=0;//设置初始透明度为0
-        function step(){
-            t.style.opacity= parseFloat(t.style.opacity) + 0.01;//透明度增加0.1
-             return;
-             if (t.style.opacity=1) {  //判断透明度为1时，删除定时器
-             clearInterval(intervalId);
-             };}
-        var intervalId = setInterval(step,5)//定时，每0.05秒执行一次step函数使得透明度增加0.1,0.5秒钟后透明度正好为1.
-       
-    } ;
-    	var t = document.getElementsByClassName('lunbo')[0];//获取元素对象
-    	var thttp = t.getElementsByClassName('lunbo_a')[0];//获取图片链接
-    	var tjpg = thttp.getElementsByClassName('lunbo_jpg')[0];//获取图片位置
-    	var diannum = document.getElementsByTagName('span');//获取小圆点
-    fadeout(document);
-    		var num=0;
-    		
-    		function huan(){
-    			
-    			
-    			var tjpg = thttp.getElementsByClassName('lunbo_jpg')[0];
-    			var hhh;
-    			var dian = t.getElementsByClassName('lunbo_a')[0];
-    			
-    			// document.getElementsByTagName('span')[0].style.backgroundColor
-    			num++;//改变轮播图片名称序号
-    			if(num == 4){
-    				num=1;
-    			};
-    			if(num==1){
-    				hhh='http://open.163.com/';
-    				diannum[0].className='bianse';
-    				// diannum[1].className-='bianse';
-    				diannum[2].className='wuse';
-    			};
-    			if(num==2){
-    				hhh='http://study.163.com/';
-    				diannum[0].className='wuse';
-    				diannum[1].className='bianse';
-    				// diannum[2].className-='bianse';
-    			};
-    			if(num==3){
-    				hhh='http://www.icourse163.org/';
-    				// diannum[0].className-='bianse';
-    				diannum[1].className='wuse';
-    				diannum[2].className='bianse';
-    			};
-    		thttp.setAttribute('href',hhh);//改写网址
-    		tjpg.setAttribute('src','img/轮播' + num +'.jpg');//改写轮播图片
-    		diannum.className += 'bianse';
-    		 fadeout(document);
-
-    	var spand = document.getElementsByTagName('span');
-    	spand[0].addEventListener('mouseover',function(){ 
-    		clearInterval(lunbo);
-    		tjpg.setAttribute('src','img/轮播1.jpg');
-    		spand[0].setAttribute('class','bianse');
-    		spand[1].setAttribute('class','wuse');
-    		spand[2].setAttribute('class','wuse');
-    		fadeout(document);
-    		num=1;},false);
-    	spand[1].addEventListener('mouseover',function(){ 
-    		clearInterval(lunbo);
-    		tjpg.setAttribute('src','img/轮播2.jpg');
-    		spand[0].setAttribute('class','wuse');
-    		spand[1].setAttribute('class','bianse');
-    		spand[2].setAttribute('class','wuse');
-    		fadeout(document);
-    		num=2;},false);
-    	spand[2].addEventListener('mouseover',function(){ 
-    		clearInterval(lunbo);
-    		tjpg.setAttribute('src','img/轮播3.jpg');
-    		spand[1].setAttribute('class','wuse');
-    		spand[0].setAttribute('class','wuse');
-    		spand[2].setAttribute('class','bianse');
-    		fadeout(document);
-    		num=3;},false);
-    		/* diannum.addEventListener('mousedown',num=num,false);*/
-    	};
-    	huan();
-    	var lunbo = setInterval(huan,5000);
-    	// var t = document.getElementsByClassName('lunbo')[0];
-    	// d.addEventListener('mouseover',clearInterval(lunbo),false);
-    	// d.addEventListener('mouseout',function(){var lunbo = setInterval(huan,5000)},false);
-    	function mOver(obj){ //鼠标指向是删除切换轮播定时器
-    		 clearInterval(lunbo);
-    	}
-    	function mOut(obj){ //鼠标移出时再设置定时器
-    		lunbo = setInterval(huan,5000);
-    	}
-    	// 	var lunbo = setInterval(huan,5000);
-    	// 	return lunbo;
-    	// }
-
-    	// spand[1].addEventListener('click',function(){ 
-    	// 	clearInterval(lunbo);
-    	// 	tjpg.setAttribute('src','img/轮播2.jpg');
-    	// 	spand[0].className='wuse'；
-    	// 	spand[2].className='wuse'；},false);
-    	// spand[2].addEventListener('click',function(){ 
-    	// 	clearInterval(lunbo);
-    	// 	tjpg.setAttribute('src','img/轮播3.jpg');
-    	// 	spand[0].className='wuse'；
-    	// 	spand[1].className='wuse'；},false);
-
-
-
-    	
-    	function page10(i){
-    		var i;
-
-		var xhr = new XMLHttpRequest();
-    	xhr.onreadystatechange = function(callback){
-    	 if (xhr.readyState === 4) { // 成功完成
-        // 判断响应结果:
-        if (xhr.status === 200) {
-            //console.log(xhr.responseText)// 成功，通过responseText拿到响应的文本:
-            return success(xhr.responseText);
-        } else {
-            // 失败，根据响应码判断失败原因:
-            //return fail(xhr.status);
-        }
-    	}
-    	}
-    	xhr.open('get','http://study.163.com/webDev/couresByCategory.htm'+'?' + 'pageNo='+ i +'&psize=20&type=10',true);
-    	//xhr.setRequestHeader()
-    	xhr.send();
-    	
-    	
-
-    	function success(obj){
-    		var data = JSON.parse(obj);
-    		console.log(data);
-    		console.log(data.list[0].bigPhotoUrl)
-    	}
-    	}
-	</script>
 
 	<div class="middle">
 	<div class="sanlie">
@@ -199,21 +60,39 @@
 
 <div class="middle ajx">
 	<div class="midtop">
-	<div class="prod_design"></div>
-	<div class="prog_language"></div>
+	<div class="prod_design midp" aname="midpp" onclick="getprod()"><a href="#midpp"><p>产品设计</p></a></div>
+	<div class="prog_language midp" onclick="getprog()" ><a href="#midpp"><p>编程语言</p></a></div>
 	</div>
-	<div class="midclass">
-		<div class="oneclass">
-			<div class="occenter">
-				<img width="223px" height="124px" src="http://img0.ph.126.net/ftDZ6dX0KhGAgzYgFvco7A==/6597692090238895296.jpg" alt="">
-				<p class="onep1">Windows Phone 7 带来了什么?</p>
-				<p class="onep2">极客公园</p>
-				<div class="onepeople"><p>510</p></div>
-				<p class="onemoney">￥800</p>
-			</div>
-		</div>
-		
+	<div class="midclass" id="midclass">
+    <div id="deletdiv">
+		<!-- <div class="oneclass">
+                    <div class="occenter">
+                        <img width="223px" height="124px" src="http://img0.ph.126.net/ftDZ6dX0KhGAgzYgFvco7A==/6597692090238895296.jpg" alt="">
+                        <div class="onefod">
+                        <p class="onep1">Windows Phone 7 带来了什么?</p>
+                        <p class="onep2">极客公园</p>
+                        <div class="onepeople"><p>510</p></div>
+                        <p class="onemoney">￥800</p>
+                        </div>
+                    </div>
+        </div> -->
+    </div>
+	<div class="pages">
+        <ul>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl1 fanye" > < </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 1 </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 2 </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 3 </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 4 </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 5 </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 6 </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 7 </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 8 </li>
+            <li onclick="getEventTrigger(event,lb)" class="pgsl1 fanye"> > </li>
+        </ul>
+    </div>
 	</div>
+
 </div>
 </div>
 	<div class="flood">
@@ -242,5 +121,284 @@
 		</div>
 	</div>
 </div> <!-- body2 -->
+    <script>
+   // 兼容IE8 事件注册 取消
+         var addEvent = document.addEventListener ?
+             function(elem,type,listener,useCapture){
+                 elem.addEventListener(type,listener,useCapture);
+             }:
+             function(elem,type,listener,useCapture){
+                 elem.attachEvent('on' + type, listener);
+             };
+         var delEvent = document.removeEventListener ?
+             function(elem,type,listener,useCapture){
+                 elem.removeEventListener(type,listener,useCapture);
+             }:
+             function(elem,type,listener,useCapture){
+                 elem.detachEvent('on' + type, listener);
+             };
+
+
+function getElementsByClassName(element, names) {   //获取class元素
+        if (element.getElementsByClassName) {
+            return element.getElementsByClassName(names);
+        } else {
+            var elements = element.getElementsByTagName('*');
+            var result = [];
+            var element,
+                classNameStr,
+                flag;
+            names = names.split(' ');
+            for (var i = 0; element = elements[i]; i++) {
+                classNameStr = ' ' + element.className + ' ';
+                flag = true;
+                for (var j = 0, name; name = names[j]; j++) {
+                    if (classNameStr.indexOf(' ' + name + '') == -1) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag) {
+                    result.push(element);
+                }
+            }
+            return result;
+        }
+    }
+    
+        function fadeout(element){
+
+        var t = getElementsByClassName(element,'lunbo')[0]//获取元素对象
+        t.style.opacity=0;//设置初始透明度为0
+        function step(){
+            t.style.opacity= parseFloat(t.style.opacity) + 0.01;//透明度增加0.1
+             return;
+             if (t.style.opacity=1) {  //判断透明度为1时，删除定时器
+             clearInterval(intervalId);
+             };}
+        var intervalId = setInterval(step,5)//定时，每0.05秒执行一次step函数使得透明度增加0.1,0.5秒钟后透明度正好为1.
+       
+    } ;
+        var t = getElementsByClassName(document,'lunbo')[0];//获取元素对象
+        var thttp = getElementsByClassName(t,'lunbo_a')[0];//获取图片链接
+        var tjpg = getElementsByClassName(thttp,'lunbo_jpg')[0];//获取图片位置
+        var diannum = document.getElementsByTagName('span');//获取小圆点
+    fadeout(document);
+            var num=0;
+            
+            function huan(){
+                
+                
+                var tjpg = getElementsByClassName(thttp,'lunbo_jpg')[0];
+                var hhh;
+                var dian = getElementsByClassName(t,'lunbo_a')[0];
+                
+                // document.getElementsByTagName('span')[0].style.backgroundColor
+                num++;//改变轮播图片名称序号
+                if(num == 4){
+                    num=1;
+                };
+                if(num==1){
+                    hhh='http://open.163.com/';
+                    diannum[0].className='bianse';
+                    // diannum[1].className-='bianse';
+                    diannum[2].className='wuse';
+                };
+                if(num==2){
+                    hhh='http://study.163.com/';
+                    diannum[0].className='wuse';
+                    diannum[1].className='bianse';
+                    // diannum[2].className-='bianse';
+                };
+                if(num==3){
+                    hhh='http://www.icourse163.org/';
+                    // diannum[0].className-='bianse';
+                    diannum[1].className='wuse';
+                    diannum[2].className='bianse';
+                };
+            thttp.setAttribute('href',hhh);//改写网址
+            tjpg.setAttribute('src','http://odqrz0v3j.bkt.clouddn.com/轮播' + num +'.jpg') //轮播图片
+            diannum.className += 'bianse';
+             fadeout(document);
+
+        var spand = document.getElementsByTagName('span');
+        spand[0].addEventListener('mouseover',function(){ 
+            clearInterval(lunbo);
+            tjpg.setAttribute('src','http://odqrz0v3j.bkt.clouddn.com/轮播1.jpg');
+            spand[0].setAttribute('class','bianse');
+            spand[1].setAttribute('class','wuse');
+            spand[2].setAttribute('class','wuse');
+            fadeout(document);
+            num=1;},false);
+        spand[1].addEventListener('mouseover',function(){ 
+            clearInterval(lunbo);
+            tjpg.setAttribute('src','http://odqrz0v3j.bkt.clouddn.com/轮播2.jpg');
+            spand[0].setAttribute('class','wuse');
+            spand[1].setAttribute('class','bianse');
+            spand[2].setAttribute('class','wuse');
+            fadeout(document);
+            num=2;},false);
+        spand[2].addEventListener('mouseover',function(){ 
+            clearInterval(lunbo);
+            tjpg.setAttribute('src','http://odqrz0v3j.bkt.clouddn.com/轮播3.jpg');
+            spand[1].setAttribute('class','wuse');
+            spand[0].setAttribute('class','wuse');
+            spand[2].setAttribute('class','bianse');
+            fadeout(document);
+            num=3;},false);
+            /* diannum.addEventListener('mousedown',num=num,false);*/
+        };
+        huan();
+        var lunbo = setInterval(huan,5000);
+        // var t = document.getElementsByClassName('lunbo')[0];
+        // d.addEventListener('mouseover',clearInterval(lunbo),false);
+        // d.addEventListener('mouseout',function(){var lunbo = setInterval(huan,5000)},false);
+        function mOver(obj){ //鼠标指向是删除切换轮播定时器
+             clearInterval(lunbo);
+        }
+        function mOut(obj){ //鼠标移出时再设置定时器
+            lunbo = setInterval(huan,5000);
+        }
+        //  var lunbo = setInterval(huan,5000);
+        //  return lunbo;
+        // }
+
+        // spand[1].addEventListener('click',function(){ 
+        //  clearInterval(lunbo);
+        //  tjpg.setAttribute('src','img/轮播2.jpg');
+        //  spand[0].className='wuse'；
+        //  spand[2].className='wuse'；},false);
+        // spand[2].addEventListener('click',function(){ 
+        //  clearInterval(lunbo);
+        //  tjpg.setAttribute('src','img/轮播3.jpg');
+        //  spand[0].className='wuse'；
+        //  spand[1].className='wuse'；},false);
+
+
+
+        //ajax 获取课程列表
+        function page10(i,type){
+            var i;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(callback){
+         if (xhr.readyState === 4) { // 成功完成
+        // 判断响应结果:
+        if (xhr.status === 200) {
+            //console.log(xhr.responseText)// 成功，通过responseText拿到响应的文本:
+            return success(xhr.responseText);
+        } else {
+            // 失败，根据响应码判断失败原因:
+            //return fail(xhr.status);
+        }}};
+
+        xhr.open('get','http://study.163.com/webDev/couresByCategory.htm'+'?' + 'pageNo='+ i +'&psize=20&type='+ type ,true);
+        //xhr.setRequestHeader()
+        xhr.send();
+        function success(obj){
+            var data = JSON.parse(obj);
+            console.log(data);
+            console.log(data.list[0].name)
+        
+        function kecheng(){
+            var midclass = getElementsByClassName(document,'midclass');
+            var imgad = midclass[0].getElementsByTagName('img')[0];
+            imgad.src=data.list[0].bigPhotoUrl;
+        }
+        //kecheng();
+        for(var i=0;i<data.list.length;i++){
+            var midclass = document.getElementById("deletdiv");
+                var odiv = document.createElement('div');
+                    odiv.className= 'oneclass';
+                    midclass.appendChild(odiv);
+                var cdiv = document.createElement('div');
+                    cdiv.className="occenter";
+                    odiv.appendChild(cdiv);
+                var oimg = document.createElement('img');
+                    oimg.className='oimg';
+                    cdiv.appendChild(oimg);
+                    oimg.src=data.list[i].bigPhotoUrl;
+                    var ooimg= getElementsByClassName(document,'oimg')
+                    ooimg[i].setAttribute('width','223px');
+                    ooimg[i].setAttribute('height','124px');
+                var ofod = document.createElement('div');
+                    ofod.className = 'onefod';
+                    cdiv.appendChild(ofod);
+                var onep1 = document.createElement('p');
+                    onep1.className = 'onep1';
+                    ofod.appendChild(onep1);
+                    onep1.innerHTML = data.list[i].name;
+                var onep2 = document.createElement('p');
+                    onep2.className = 'onep2';
+                    ofod.appendChild(onep2);
+                    onep2.innerHTML = data.list[i].provider;
+                var onepop = document.createElement('div');
+                    onepop.className = 'onepeople';
+                    cdiv.appendChild(onepop);
+                var onepp = document.createElement('p');
+                    onepop.appendChild(onepp);
+                    onepp.innerHTML = data.list[i].learnerCount;
+                var onemp = document.createElement('p');
+                    onemp.className = 'onemoney';
+                    cdiv.appendChild(onemp);
+                    var money
+                    if(data.list[i].price == 0){money = '免费'}else{money = '￥' + data.list[i].price} ;
+                    onemp.innerHTML = money ;
+                
+        };
+            //for (i=0;i<data.list[i].totalPage;i++)
+        };
+        
+  //          var midclass = ajx.getElementsByTagName('div')[1];
+   //         var div = document.createElement("div");
+   //         midclass.appendChild(div);
+
+
+  //          var fdiv = midclass.getElementsByTagName('div')[i];
+  //         var div = document.createElement("div");
+   //         div.className= 'occenter';
+ //          fdiv.appendChild(div);
+  //          midclass.innerHTML = ' ';
+        }
+page10(1,10);
+        var lb=10;
+        function getprod(){//课程类别产品设计
+        deletdiv.innerHTML="";
+        lb=10;
+        page10(1,lb)
+        return lb;
+        }
+
+        function getprog(){//课程类别编程语言
+        deletdiv.innerHTML="";
+        lb=20;
+        page10(1,lb)
+        return lb;
+        }
+
+        function getEventTrigger(event,lb){//翻页
+        var yeshu = document.getElementsByClassName('fanye');
+        x=event.target;
+        ye=x.innerText;
+        console.log(yeshu[ye]);
+        if(ye === '<'){
+        ye = qye-1;
+        };
+        if(ye === '>'){
+        ye = qye+1;
+        }
+        deletdiv.innerHTML="";
+        page10(ye,lb);
+        yeshu[ye].addAttribute('class','pgclick');
+        //console.log( yeshu[ye])
+        qye=ye;
+
+        }
+
+       
+ //       var fanye = function( yeshu[0].innerText){
+ //           i = 
+ //           page10(i)
+ //       }
+    </script>
 </body>
 </html>
