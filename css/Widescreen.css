@@ -357,11 +357,7 @@ body{
 	.pages{
 	height: 20px;
 	width: 302px;
-<<<<<<< HEAD
 	/* background-color: #f3f3f3; */
-=======
-	background-color: #f3f3f3;
->>>>>>> 670278d1bd93979fffc9e1faadcdae462f708b55
 	bottom: 120px;
 	right: 255px;
 	position: absolute;
@@ -387,11 +383,7 @@ body{
 	.pgsl:hover,.pgsl1:hover{
 		background-color: #9dd8b1;
 		color: white;
-<<<<<<< HEAD
 	}
 	.pgc{
 	color: #9dd8b1;	
 	}
-=======
-	};
->>>>>>> 670278d1bd93979fffc9e1faadcdae462f708b55
