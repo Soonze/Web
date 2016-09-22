@@ -60,8 +60,13 @@
 
 <div class="middle ajx">
 	<div class="midtop">
+<<<<<<< HEAD
 	<div class="prod_design midp" aname="midpp" onclick="getprod()"><a href="#midpp"><p>产品设计</p></a></div>
 	<div class="prog_language midp" onclick="getprog()" ><a href="#midpp"><p>编程语言</p></a></div>
+=======
+	<div class="prod_design midp" aname="midpp"><a href="#midpp"><p>产品设计</p></a></div>
+	<div class="prog_language midp"><a href="#midpp"><p>编程语言</p></a></div>
+>>>>>>> 670278d1bd93979fffc9e1faadcdae462f708b55
 	</div>
 	<div class="midclass" id="midclass">
     <div id="deletdiv">
@@ -78,6 +83,7 @@
         </div> -->
     </div>
 	<div class="pages">
+<<<<<<< HEAD
         <ul class=''>
             <li onclick="getEventTrigger(event,lb)" class="pgsl1 fanye" > < </li>
             <li onclick="getEventTrigger(event,lb)" class="pgsl fanye pgc" > 1 </li>
@@ -89,6 +95,19 @@
             <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 7 </li>
             <li onclick="getEventTrigger(event,lb)" class="pgsl fanye"> 8 </li>
             <li onclick="getEventTrigger(event,lb)" class="pgsl1 fanye"> > </li>
+=======
+        <ul>
+            <li onmousedown="getEventTrigger(event)" class="pgsl1 fanye" > < </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl fanye"> 1 </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl fanye"> 2 </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl fanye"> 3 </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl fanye"> 4 </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl fanye"> 5 </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl fanye"> 6 </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl fanye"> 7 </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl fanye"> 8 </li>
+            <li onmousedown="getEventTrigger(event)" class="pgsl1 fanye"> > </li>
+>>>>>>> 670278d1bd93979fffc9e1faadcdae462f708b55
         </ul>
     </div>
 	</div>
@@ -277,7 +296,11 @@ function getElementsByClassName(element, names) {   //获取class元素
 
 
         //ajax 获取课程列表
+<<<<<<< HEAD
         function page10(i,type){
+=======
+        function page10(i){
+>>>>>>> 670278d1bd93979fffc9e1faadcdae462f708b55
             var i;
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function(callback){
@@ -291,7 +314,11 @@ function getElementsByClassName(element, names) {   //获取class元素
             //return fail(xhr.status);
         }}};
 
+<<<<<<< HEAD
         xhr.open('get','http://study.163.com/webDev/couresByCategory.htm'+'?' + 'pageNo='+ i +'&psize=20&type='+ type ,true);
+=======
+        xhr.open('get','http://study.163.com/webDev/couresByCategory.htm'+'?' + 'pageNo='+ i +'&psize=20&type=10',true);
+>>>>>>> 670278d1bd93979fffc9e1faadcdae462f708b55
         //xhr.setRequestHeader()
         xhr.send();
         function success(obj){
@@ -359,6 +386,7 @@ function getElementsByClassName(element, names) {   //获取class元素
  //          fdiv.appendChild(div);
   //          midclass.innerHTML = ' ';
         }
+<<<<<<< HEAD
 page10(1,10);
         var lb=10;
 
@@ -414,6 +442,31 @@ page10(1,10);
             qye=ye;
         }
 
+=======
+page10(1);
+      
+        function getEventTrigger(event){
+        var yeshu = document.getElementsByClassName('fanye');
+        x=event.target;
+        ye=x.innerText;
+        console.log(yeshu[ye]);
+        if(ye === '<'){
+        ye = qye-1;
+        };
+        if(ye === '>'){
+        ye = qye+1;
+        }
+        deletdiv.innerHTML="";
+        page10(ye);
+        qye=ye;
+
+        }
+       
+ //       var fanye = function( yeshu[0].innerText){
+ //           i = 
+ //           page10(i)
+ //       }
+>>>>>>> 670278d1bd93979fffc9e1faadcdae462f708b55
     </script>
 </body>
 </html>
