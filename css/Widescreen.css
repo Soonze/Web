@@ -357,7 +357,7 @@ body{
 	.pages{
 	height: 20px;
 	width: 302px;
-	background-color: #f3f3f3;
+	/* background-color: #f3f3f3; */
 	bottom: 120px;
 	right: 255px;
 	position: absolute;
@@ -383,8 +383,7 @@ body{
 	.pgsl:hover,.pgsl1:hover{
 		background-color: #9dd8b1;
 		color: white;
-	};
-	.pgclick{
-		background-color: #9dd8b1;
-		color: white;	
+	}
+	.pgc{
+	color: #9dd8b1;	
 	}

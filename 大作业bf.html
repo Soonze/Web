@@ -387,33 +387,46 @@ page10(1,10);
         //alert(qye);
         }
         if(ye === '<'){//往前翻页
-            ye = qye-1;
+        ye = qye-1;
         if(ye==0){
-            ye=1;
-            return false;
+        ye=1;
+
+        return false;
         }
         };
-        if(ye === '>'){//往后翻页
-            if(ye == 7){
-            ye=7;
-            return false;
+        if(ye === '>'){
+        if(ye == 7){
+        ye=7;
+        return false;
         }
-            ye = qye*1+1;
+        ye = qye*1+1;
+      
         }
+       
         deletdiv.innerHTML="";
         page10(ye,lb);
         yee=ye*1;
         if(yee>8){
-             yee=8;
+        yee=8;
         }
-        for(var i=1;i<9;i++){ //更改当前页数字的样式
-            yeshu[i].className = 'pgsl fanye'
-            }
-            yeshu[yee].className = 'pgsl fanye pgc';
-            console.log( yeshu[ye])
-            qye=ye;
+        //alert(yee)
+        for(var i=1;i<9;i++){
+        yeshu[i].className = 'pgsl fanye'
+        }
+       // yeshu[0-7].className = 'pgsl fanye';
+        yeshu[yee].className = 'pgsl fanye pgc';//addAttribute('class','pgclick');
+        console.log( yeshu[ye])
+        qye=ye;
+      //  alert(qye-1)
+        //if(qye==underfind){}
+       // yeshu[qye].className = 'pgsl fanye ';
+      
         }
 
+ //       var fanye = function( yeshu[0].innerText){
+ //           i = 
+ //           page10(i)
+ //       }
     </script>
 </body>
 </html>
